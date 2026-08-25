@@ -3,7 +3,6 @@ package Runner;
 import com.frozen.redbuss.entity.TicketCancelEntity;
 import javax.persistence.*;
 
-
 public class CreatTicketCancle {
     public static void main(String[] args) {
         TicketCancelEntity ticketCancelEntity = new TicketCancelEntity();
@@ -23,12 +22,14 @@ public class CreatTicketCancle {
             System.out.println("Data saved successfully: " + ticketCancelEntity);
         } catch (PersistenceException e) {
             et.rollback();
-            e.getMessage();
+
+            System.out.println("Error occurred while saving data: " + e.getMessage());
             e.printStackTrace();
         } finally {
             if (em != null) {
                 em.close();
             }
+
             if (emf != null) {
                 emf.close();
             }

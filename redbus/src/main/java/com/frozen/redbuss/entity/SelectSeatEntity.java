@@ -3,19 +3,21 @@ import lombok.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import javax.persistence.*;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import javax.persistence.*;
 @Data
 @Getter
 @Setter
 @Entity
-@Table(name = "ticketcancel_table")
-public class TicketCancelEntity {
+@Table(name = "selectseat_table")
+public class SelectSeatEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ticketId;
-    @Column(name = "userId")
-    private Integer userId;
     @Column(name = "seatNo")
     private Integer seatNo;
+    @Column(name = "userId")
+    private Integer userId;
 }
